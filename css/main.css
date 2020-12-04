@@ -1,0 +1,103 @@
+body,
+body * {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/background.webp);
+    background-repeat: repeat-x;
+    background-size: contain;
+}
+    h1 {
+        text-align: center;
+    }
+    .car {
+        display:inline-block;
+        width: 150px;
+        height: 80px;
+        background-image: url(../img/lambo.png) ;
+        background-size: contain;
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 100px;
+        transition: all 2s;
+    }
+    .car[data-model='arklys'] {
+        background-image: url(../img/arklys.png);
+    }
+    .car[data-model='bmw'] {
+        background-image: url(../img/bmw.png);
+    }
+    .car[data-model='lambo'] {
+        background-image: url(../img/lambo.png);
+    }
+    .car[data-model='ferrari'] {
+        background-image: url(../img/ferrari.png);
+    }
+    .car[data-model='moscvich'] {
+        background-image: url(../img/moscvich.png);
+    }
+    .car[data-model='tesla'] {
+        background-image: url(../img/tesla.png);
+    }
+   
+    .car::before {
+        display:inline-block;
+        width: 40px;
+        height: 40px;
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fffc;
+        color: #000;
+        font-size: 20px;
+        line-height: 40px;
+        text-align: center;
+
+    }
+     
+    .car.car-1 {
+        top: 35vh;
+    }
+        .car.car-1::before {
+            content: 'W';
+        }
+
+    .car.car-2 {
+        top: 62vh;
+    }
+        .car.car-2::before {
+            content: 'P';
+        }
+
+    .line {
+        display: inline-block;
+        width: 50vh;
+        height: 28px;
+        transform: rotate(90deg);
+        position: absolute;
+        top: 55vh;
+        left: -90px;
+        border: 4px solid #fff;
+        border-left: none;
+        border-right:none;
+        text-align: center;
+        line-height: 22px;
+        font-size: 30px;
+        color: #fff;
+
+    }
+    .line.finish {
+        left: calc(100% - 20%);
+        border-color: red;
+        color: red;
+    }
