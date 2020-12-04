@@ -5,16 +5,17 @@ const models = ['arklys', 'ferrari', 'bmw', 'lambo', 'moscvich', 'tesla'];
 const windowWidth = innerWidth;
 const carWidth = 150;
 const finishWidth = 40;
-const finishRightpace = 10;
+const finishRightSpace = 10;
 const carStep = 20;
 
-const finishPosition = windowWidth - carWidth - finishWidth - finishRightpace;
+const finishPosition = windowWidth - carWidth - finishWidth - finishRightSpace;
 
-const car1Model = Math.floor(Math.random()* models.length);
-const car2Model = Math.floor(Math.random()* models.length);
+const car1Model = Math.floor(Math.random() * models.length);
+const car2Model = Math.floor(Math.random() * models.length);
 
-car1.dataset.model = [car1Model];
-car2.dataset.model = [car2Model];
+
+car1.dataset.model = models[car1Model];
+car2.dataset.model = models[car2Model];
 
 
 let car1Position = 0;
@@ -28,6 +29,7 @@ addEventListener('keyup', event => {
     if (key === 'w') {
         car1Position += carStep;
         car1.style.left = car1Position + "px";
+        
         if (car1Position > finishPosition) {
             alert('Laimejo pirmas dalyvis');
             location.reload();
